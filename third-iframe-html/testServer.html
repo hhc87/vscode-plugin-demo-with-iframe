@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <div id="testDemo" style="width:800px;height:200px;background-color:pink">
+    aaaabbbbs123
+  </div>
+  <button draggable="true" id="btn">drag me</button>
+
+  <script>
+    window.onload = function () {
+
+      let dragged = null;
+
+      const source = document.getElementById("btn");
+      source.addEventListener("dragstart", (event) => {
+        dragged = event.target;
+      });
+
+
+      const target = document.getElementById("testDemo");
+      target.addEventListener("dragover", (event) => {
+        event.preventDefault();
+      });
+
+      target.addEventListener("drop", (event) => {
+        event.preventDefault();
+        event.target.appendChild(dragged);
+
+      });
+    }
+  </script>
+</body>
+
+</html>

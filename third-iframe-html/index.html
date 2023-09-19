@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=0,maximum-scale=0,user-scalable=yes,shrink-to-fit=no">
+  <title>lowcode</title>
+  <style>
+    html,
+    body {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+  
+</head>
+
+<body>
+  <div>test</div>
+
+  <div style="height: 600px;width: 600px;">
+    <iframe srcdoc='<!DOCTYPE html>
+      <html>
+      
+      <body>
+        <div id="testDemo" style="width:800px;height:200px;background-color:pink">
+          aaaabbbbs
+        </div>
+        <button draggable="true" id="btn">
+          wokey dong
+        </button>
+      
+            <script>
+              window.onload = function () {
+      
+                let dragged = null;
+      
+                const source = document.getElementById("btn");
+                source.addEventListener("dragstart", (event) => {
+                  dragged = event.target;
+                });
+      
+      
+                const target = document.getElementById("testDemo");
+                target.addEventListener("dragover", (event) => {
+                  event.preventDefault();
+                });
+      
+                target.addEventListener("drop", (event) => {
+                  event.preventDefault();
+      
+                  event.target.appendChild(dragged);
+      
+                });
+              }
+            </script>
+      </body>
+      
+      
+      </html>' id="frame" width="90%" height="90%" tabIndex="0" frameborder="0" draggable="true" sandbox="allow-scripts"/>
+  </div>
+</body>
+
+</html>

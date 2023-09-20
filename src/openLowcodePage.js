@@ -48,6 +48,7 @@ module.exports = function (context) {
 				}
 			})
 			getWebViewContent(context, 'src/view/index.html').then((html) => {
+			// getWebViewContent(context, 'src/view/index-with-iframe-src.html').then((html) => {
 				panel.webview.html = html
 			})
 
